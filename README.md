@@ -1,6 +1,5 @@
-@[TOC](学习记录)
-
 # qzws
+
 ## VSCode设置Git成功 2021.02.21 23:16 ,Next to upload github
 
 # **基础资料**
@@ -61,4 +60,19 @@ new Vue({
     el: '#app',
 })
 ```
-3. 安装chrome扩展工具用于调试vue
+3. 安装chrome扩展工具用于调试vue  
+
+# **VUE基础知识学习**#
+1. 搭建环境使用CDN的方法
+```html
+<!-- 导入vue 开发版 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 导入element -->
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+```
+2. 常用命令
++ case01.双向数据绑定:v-model使用
++ 
