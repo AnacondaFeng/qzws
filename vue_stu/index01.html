@@ -16,7 +16,21 @@
             new Vue({
                 el: '#eric',
                 data: {
-                    name: 'sss'
+                    name: 'sss',
+                    age: 21,
+                    flag: true,
+                    nums: [0, 1, 2, 3, 4],
+                    user: {
+                        id: 123,
+                        name: 'eric'
+                    },
+                    users: [{
+                        id: 1,
+                        name: 'eric'
+                    }, {
+                        id: 2,
+                        name: 'jackie'
+                    }]
                 }
             });
         }
@@ -28,6 +42,17 @@
         <!-- case01 -->
         用户名：<input type="text" v-model="name">
         <br> {{name}}
+        <br>{{age}}
+        <br>{{flag}}
+        <br>{{nums}}
+        <br>{{user}}
+
+        <!-- case02 -->
+        <ul>
+            <li v-for="value in nums">{{value}}</li>
+            <!-- 这里加了一个索引 -->
+            <li v-for="(u,index) in users">{{index+1}}-{{u.id}}-{{u.name}}</li>
+        </ul>
     </div>
 
 </body>

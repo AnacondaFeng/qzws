@@ -73,6 +73,7 @@ new Vue({
 <!-- 引入组件库 -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 ```
-2. 常用命令
-+ case01.双向数据绑定:v-model使用
-+ 
+2. 常用命令（去查官网KPI学习）
+### **index01.html**
++ case01.双向数据绑定:v-model
++ case02.对数组/对象进行循环操作:v-for，:key指令绑定唯一key，重用元素提高效率
