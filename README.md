@@ -77,3 +77,5 @@ new Vue({
 ### **index01.html**
 + case01.双向数据绑定:v-model
 + case02.对数组/对象进行循环操作:v-for，:key指令绑定唯一key，重用元素提高效率
+
+# 使用HBuilder X开发前端，测试Git用 20210226
