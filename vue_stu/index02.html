@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>常用命令2</title>
+	<!-- case03: v-on -->
+	<!-- case04: v-show/v-if 用来显示或隐藏元素 -->
+    <script>
+		window.onload=function(){
+			new Vue({
+				el:"#eric",
+				data:{ //存储数据
+					arr:[11,22,33,44,55,66,77] //定义数组
+				},
+				methods:{ //存储方法
+					show:function(){
+						console.log('show方法')
+					},
+					add(){
+						// 需要使用this调用当前对象
+						this.arr.push(88)
+					}
+				}
+			})
+			new Vue({
+				el:"#jason",
+				data:{
+					// 给v-show提供使用
+					flag:true
+				},
+				methods:{
+					test(){
+						console.log('Test')
+					},
+					changeFlag(){
+						this.flag=false
+					}
+				}
+			})
+		}
+		
+    </script>
+</head>
+
+<body>
+	<!-- case03 -->
+    <div id="eric">
+        <button v-on:click="show()">点我</button>
+		<button v-on:click="add()">点击数组增加一个数</button>
+		<br>{{arr}}
+    </div>
+	<!-- case04 -->
+	<div id="jason">
+		<!-- <button v-on:click="changeFlag()">隐藏</button> -->
+		<button v-on:click="flag=!flag">隐藏</button>
+		
+		<br>
+		<div style="width: 100px; height: 100px; background-color: red;" v-show="flag">
+			Welcome
+		</div>
+	</div>
+
+</body>
+
+</html>

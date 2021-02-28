@@ -77,3 +77,13 @@ new Vue({
 ### **index01.html**
 + case01.双向数据绑定:v-model
 + case02.对数组/对象进行循环操作:v-for，:key指令绑定唯一key，重用元素提高效率
+
+# 使用HBuilder X开发前端，测试Git用 20210226
+
+### **index02.html**
++ case03.事件绑定:v-on
++ case04.显示或隐藏元素：v-show/v-if
+  - v-show通过display属性实现
+  - v-if div直接就没有了
+ 
+### 用户管理实现案例
