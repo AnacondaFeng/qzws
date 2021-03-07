@@ -45,6 +45,36 @@ python manage.py makemigrations 生成执行脚本
 python manage.py migrate 到数据库创建表
 ```
 
+9. 开发后端view
+```python
+1. 先找到views文件，写一个获得全部学生数据的方法
+# 引入Student的类
+from student.models import Student
+# 引入JsonResponse模块 做返回用
+from django.http import JsonResponse
+
+# 定义方法获取所有学生的信息
+def get_students(request):
+	# 异常处理
+	try:
+		# 使用ORM获取所有学生信息
+		obj_students = Student.objects.all().values()
+		# 把结果转为List
+		students = list(obj_students)
+		# 返回Json
+		return JsonResponse({'code':1, 'data':students})
+	except Exception as e:
+		return JsonResponse({'code':0, 'msg':"异常："+str(e)})
+
+2.添加url，找到urls文件进行修改
+# 先导入
+from student import views
+
+urlpatterns = [
+	path('students/', views.get_students),
+]
+```
+
 # **开始创建VUE前端**
 1. VSCode安装扩展插件
 ```html
@@ -81,7 +111,7 @@ new Vue({
 # 使用HBuilder X开发前端，测试Git用 20210226
 
 ### **index02.html**
-+ case03.事件绑定:v-on
++ case03.事件绑定:v-on（有简写方式@click，$event事件对象）
 + case04.显示或隐藏元素：v-show/v-if
   - v-show通过display属性实现
   - v-if div直接就没有了
