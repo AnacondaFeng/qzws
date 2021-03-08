@@ -2,80 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>内容管理系统</title>
-    <!-- 引入外部的样式文件 -->
-    <link rel="stylesheet" href="./css/index.css" />
-    <!-- 引入Element UI样式 -->
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
-    <!-- 使用CDN引入Vue模块-->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- 引入Element组件库 -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>内容管理系统</title>
+	<!-- 引入外部的样式文件 -->
+	<link rel="stylesheet" href="./css/index.css" />
+	<!-- 引入Element UI样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+	<!-- 使用CDN引入Vue模块-->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- 引入Element组件库 -->
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </head>
 
 <body>
-    <div id="app">
-        <el-container>
-            <el-aside width="200px">
-                <el-menu :default-openeds="['1']">
-                    <el-submenu index="1">
-                        <template slot="title"><i class="el-icon-message"></i>导航一</template>
-                        <el-menu-item-group>
-                            <!-- <template slot="title">分组一</template> -->
-                            <el-menu-item index="1-1">选项1</el-menu-item>
-                            <el-menu-item index="1-2">选项2</el-menu-item>
-                        </el-menu-item-group>
-                        <!-- <el-menu-item-group title="分组2"> -->
-                        <!-- <el-menu-item index="1-3">选项3</el-menu-item>
-                        </el-menu-item-group> -->
-                        <!-- <el-submenu index="1-4">
-                            <template slot="title">选项4</template>
-                            <el-menu-item index="1-4-1">选项4-1</el-menu-item>
-                        </el-submenu> -->
-                    </el-submenu>
-                    <el-submenu index="2">
-                        <template slot="title"><i class="el-icon-menu"></i>导航二</template>
-                        <el-menu-item-group>
-                            <!-- <template slot="title">分组一</template> -->
-                            <el-menu-item index="2-1">选项1</el-menu-item>
-                            <el-menu-item index="2-2">选项2</el-menu-item>
-                        </el-menu-item-group>
-                        <!-- <el-menu-item-group title="分组2">
-                            <el-menu-item index="2-3">选项3</el-menu-item>
-                        </el-menu-item-group>
-                        <el-submenu index="2-4">
-                            <template slot="title">选项4</template>
-                            <el-menu-item index="2-4-1">选项4-1</el-menu-item>
-                        </el-submenu> -->
-                    </el-submenu>
-                    <!-- <el-submenu index="3">
-                        <template slot="title"><i class="el-icon-setting"></i>导航三</template>
-                        <el-menu-item-group>
-                            <template slot="title">分组一</template>
-                            <el-menu-item index="3-1">选项1</el-menu-item>
-                            <el-menu-item index="3-2">选项2</el-menu-item>
-                        </el-menu-item-group>
-                        <el-menu-item-group title="分组2">
-                            <el-menu-item index="3-3">选项3</el-menu-item>
-                        </el-menu-item-group>
-                        <el-submenu index="3-4">
-                            <template slot="title">选项4</template>
-                            <el-menu-item index="3-4-1">选项4-1</el-menu-item>
-                        </el-submenu>
-                    </el-submenu> -->
-                </el-menu>
-            </el-aside>
-            <el-container>
-                <el-header style="height: 90px;">内容管理系统</el-header>
-                <el-main>Main</el-main>
-                <el-footer style="height: 30px;">Design by ericFeng using vue+Element</el-footer>
-            </el-container>
-        </el-container>
-    </div>
+	<div id="app">
+		<el-container>
+		    <el-header style="height: 80px;">学生信息管理系统</el-header>
+		    <el-container>
+		        <!-- 侧边栏 -->
+		        <el-aside width="200px">
+		            <el-menu default-active="2" class="el-menu-vertical-demo">
+		                <el-menu-item index="1">
+		                    <i class="el-icon-menu"></i>
+		                    <span slot="title">班级管理</span>
+		                </el-menu-item>
+		                <el-menu-item index="2">
+		                    <i class="el-icon-user"></i>
+		                    <span slot="title">学生信息</span>
+		                </el-menu-item>
+		                <el-menu-item index="3">
+		                    <i class="el-icon-s-custom"></i>
+		                    <span slot="title">讲师信息</span>
+		                </el-menu-item>
+		                <el-menu-item index="4">
+		                    <i class="el-icon-document"></i>
+		                    <span slot="title">课程管理</span>
+		                </el-menu-item>
+		            </el-menu>
+		        </el-aside>
+		        <el-container>
+		            <!-- 主窗体 -->
+		            <el-main>
+		                <!-- 面包屑导航 -->
+		                <el-breadcrumb separator-class="el-icon-arrow-right">
+		                    <el-breadcrumb-item>首页</el-breadcrumb-item>
+		                    <el-breadcrumb-item>学生管理</el-breadcrumb-item>
+		                </el-breadcrumb>
+					</el-main>
+					<el-footer style="height: 30px;">学生信息管理系统 版权所有：Eric Feng | 2021-03-08</el-footer>
+				</el-container>
+			</el-container>
+		</el-container>					
+	</div>
 </body>
-
 </html>
 <script src="js/index.js"></script>

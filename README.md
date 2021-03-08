@@ -7,6 +7,7 @@
 2. 开发环境：Ubuntu20.04
 3. 创建虚拟环境，安装指定版本Django命令 conda install django=version
 4. VSCode设置默认python运行环境，Ctrl+Shift+P快捷键
+5. 运行Django命令：python manage.py runserver 9999
 
 # **开始创建Django后端程序**
 1. 创建Project
@@ -45,15 +46,15 @@ python manage.py makemigrations 生成执行脚本
 python manage.py migrate 到数据库创建表
 ```
 
-9. 开发后端view
+9. 开发后端view文件
 ```python
-1. 先找到views文件，写一个获得全部学生数据的方法
-# 引入Student的类
-from student.models import Student
-# 引入JsonResponse模块 做返回用
+ 1. 先找到views文件，写一个获得全部学生数据的方法
+ # 引入Student的类，直接写.就好了
+from .models import Student
+ # 引入JsonResponse模块 做返回用
 from django.http import JsonResponse
 
-# 定义方法获取所有学生的信息
+ # 定义方法获取所有学生的信息
 def get_students(request):
 	# 异常处理
 	try:
@@ -66,13 +67,12 @@ def get_students(request):
 	except Exception as e:
 		return JsonResponse({'code':0, 'msg':"异常："+str(e)})
 
-2.添加url，找到urls文件进行修改
-# 先导入
-from student import views
-
-urlpatterns = [
+ 2.添加url，找到urls文件进行修改
+ # 先导入
+ from student import views
+ urlpatterns = [
 	path('students/', views.get_students),
-]
+ ]
 ```
 
 # **开始创建VUE前端**
